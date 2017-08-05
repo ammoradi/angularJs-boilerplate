@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Meta tags -->
+
+    <base href="/">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="user-scalable = yes">
+    <meta name="viewport" content="width=1024">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="angularJs"/>
+    <meta name="keywords" content="angularJs , ammoradi , CESA , workshop"/>
+    <meta name="author" content="amirmohammad.moradi@gmail.com"/>
+
+    <title>angularJs</title>
+
+    <!-- Styles  -->
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="bower_components/animate.css/animate.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Lib Dependencies  -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+
+    <!-- Dependency Modules  -->
+    <script src="js/Modules/UserModule/userModule.js"></script>
+    <script src="js/Modules/UserModule/UserModel.js"></script>
+    <script src="js/Modules/UserModule/UserServices.js"></script>
+
+
+    <!-- Main Module  -->
+    <script src="js/app.js"></script>
+
+    <!-- Global Services -->
+    <script src="js/Conf/Constants.js"></script>
+    <script src="js/Conf/AuthInterceptor.js"></script>
+    <script src="js/Services/AuthService.js"></script>
+
+    <!-- Controllers -->
+    <script src="dist/js/Controller.min.js"></script>
+
+</head>
+
+<body ng-app="angularJs" ng-controller="RootCtrl">
+<div>
+    <main id="main">
+        <div ui-view></div>
+    </main>
+</div>
+</body>
+</html>

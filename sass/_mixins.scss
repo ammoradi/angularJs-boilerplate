@@ -1,0 +1,130 @@
+@mixin makeBoxGrid( $column , $offset, $responsive ) {
+  @if $responsive == 0 {
+    @if $column == 1 {
+      width: $grid -  ($offset * 2);
+      margin: {
+        left: $offset;
+        right: $offset;
+        bottom:$offset;
+      }
+    }
+    @else {
+      width: ($grid / $column) - ($column - 1) * $offset;
+      margin: {
+        left: (($column - 1 ) * $offset)/2;
+        right: (($column - 1 ) * $offset)/2;
+        bottom: ($column - 1 ) * $offset;
+      }
+    }
+  }
+  @if $responsive == 1 {
+    @if $column == 1 {
+      width: calc((100%) - #{$offset * 2});
+      margin: {
+        left: $offset;
+        right: $offset;
+        bottom:$offset * 2;
+      }
+    }
+    @else {
+      //width: ($gridWidth / $column) - ($column - 1) * $offset;
+      width: calc((100% / #{$column}) - #{$offset});
+      margin: {
+        left: (($column - 1 ) * $offset)/2;
+        right: (($column - 1 ) * $offset)/2;
+        bottom: ($column - 1 ) * $offset;
+      }
+    }
+  }
+  float: right;
+}
+
+@mixin makeGrid($maxpix,$column,$offset,$classname,$rtl, $inheranceGrid) {
+  $direction : left;
+  @if $rtl == true {
+    $direction: right;
+  }
+
+  @if $inheranceGrid == true {
+    @for $i from 1 to $column + 1 {
+      .#{$classname}-#{$i} {
+        float: $direction;
+        margin: {
+          left : $offset/2;
+          right : $offset/2;
+          bottom: $offset;
+        }
+        width: calc( ((100% / #{$column}) * #{$i} ) - #{$offset} );
+      }
+    }
+  }
+
+  @else {
+    @for $i from 1 to $column + 1 {
+      .#{$classname}-#{$i} {
+        float: $direction;
+        margin: {
+          left : $offset/2;
+          right : $offset/2;
+          bottom: $offset;
+        }
+        width: calc( ((#{$maxpix} / #{$column}) * #{$i} ) - #{$offset} );
+      }
+    }
+  }
+
+  .container {
+    width: auto;
+    margin: auto;
+  }
+
+  .offset-left {
+    float: left;
+  }
+
+  .offset-right {
+    margin: {
+      left : $offset !important;
+      right : 0 !important;
+    }
+  }
+
+  .no-margin-bottom {
+    margin-bottom: 0 !important;
+  }
+
+  .center {
+    float: none;
+    margin: {
+      left: auto !important;
+      right: auto !important;
+    }
+  }
+}
+
+@mixin makeVGrid($noisesHeight,$rows,$offset,$classname, $panelHeaderSize, $panelFooterSize) {
+  $areaHeight: "(100% - #{$noisesHeight})";
+  $boxHeight: #{$areaHeight} / #{$rows};
+
+  @for $i from 1 to $rows + 1 {
+    .#{$classname}-#{$i} {
+      // $offset : $offset / $rows;
+      overflow: hidden !important;
+      height: calc(((#{$boxHeight}) * #{$i}) - #{$offset});
+      margin: {
+        bottom: $offset;
+      }
+
+      .forms {
+        height: calc(((#{$boxHeight}) * #{$i}) - #{$offset} - #{$panelHeaderSize} - 30px);
+        overflow-y: scroll;
+      }
+
+      footer {
+        + .forms {
+          height: calc(((#{$boxHeight}) * #{$i}) - #{$offset} - #{$panelHeaderSize} - #{$panelFooterSize} - 30px);
+        }
+      }
+    }
+  }
+}

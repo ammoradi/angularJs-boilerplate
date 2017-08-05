@@ -1,0 +1,27 @@
+{
+  "name": "angularJS_workshop",
+  "version": "1.0.0",
+  "description": "CESA_angularJS_summer_workshop",
+  "main": "gulp.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.18.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-minify": "1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ammoradi/angularJs_workshop.git"
+  },
+  "author": "Amirmohammad.moradi@gmail.com <Amirmohammad.moradi@gmail.com>",
+  "license": "SEE LICENSE IN <LICENSE>"
+}

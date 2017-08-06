@@ -5,7 +5,8 @@ var Constants = function () {
         perPage: "" ,
         errorMessages: {
             UNKNOWN_ERROR: ""
-        }
+        },
+        apiKey: "AIzaSyAAOm5nA8r09-W2QerX9mefssmCH6M3LLY"
     }
 };
 

@@ -1,0 +1,22 @@
+@import "variables";
+@import "mixins";
+
+.container {
+  width: 100%;
+  margin:auto;
+}
+
+.grid {
+  overflow: hidden;
+  @include makeGrid($grid,12,5px,"col", false, true);
+  @include makeVGrid(0,12,5px,"vcol", 0, 0);
+}
+
+body{
+  width: 100vw;
+  height:100%;
+  overflow: hidden;
+  background: {
+    color: $purple;
+  };
+}

@@ -1,0 +1,23 @@
+#examples{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  float: left;
+  .button-group{
+    width: 50vw;
+    float: left;
+    position: relative;
+    left:50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    .action-button{
+      width: 100%;
+      span{
+        text-align: center;
+      }
+    }
+  }
+}

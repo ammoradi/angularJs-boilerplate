@@ -1,7 +1,18 @@
 var jsonPlaceHolderModel = function ($http, Constants) {
 
-    return {
+    var getPosts = function (callback) {
+        $http.get("https://jsonplaceholder.typicode.com/posts/1")
+            .success(function (data, status) {
+                callback(data, true)
+            })
+            .error(function (data, status) {
+                    callback(data, false)
+                }
+            )
+    };
 
+    return {
+        getPosts : getPosts
     }
 };
 

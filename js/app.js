@@ -22,7 +22,8 @@ var angularJs = angular.module("angularJs",
             })
             .state('examples.get-api', {
                 url: '/get-api',
-                templateUrl: '/templates/examples.getAPI.html'
+                templateUrl: '/templates/examples.getAPI.html',
+                controller: 'Examples_getApiCtrl'
             });
         $urlRouterProvider.otherwise('/');
     })

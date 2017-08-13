@@ -6,7 +6,7 @@
   "description": "CESA angularJS summer workshop",
   "main": "",
   "moduleType": [],
-  "license": "GNU",
+  "license": "GPL",
   "homepage": "https://github.com/ammoradi/angularJs_workshop.git",
   "private": false,
   "ignore": [

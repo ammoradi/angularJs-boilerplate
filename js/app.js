@@ -10,6 +10,11 @@ var angularJs = angular.module("angularJs",
                 url: '/',
                 templateUrl: '/templates/landing.html',
                 controller: 'LandingCtrl'
+            })
+            .state('examples', {
+                url: '/examples',
+                templateUrl: '/templates/examples.html',
+                controller: 'ExamplesCtrl'
             });
         $urlRouterProvider.otherwise('/');
     })

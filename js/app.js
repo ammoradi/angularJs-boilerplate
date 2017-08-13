@@ -15,6 +15,10 @@ var angularJs = angular.module("angularJs",
                 url: '/examples',
                 templateUrl: '/templates/examples.html',
                 controller: 'ExamplesCtrl'
+            })
+            .state('examples.static-json', {
+                url: '/static-json',
+                templateUrl: '/templates/examples-staticJson.html'
             });
         $urlRouterProvider.otherwise('/');
     })

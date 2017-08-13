@@ -1,7 +1,7 @@
 var angularJs = angular.module("angularJs",
     [
         'ui.router', 'ngStorage',
-        'userModule'
+        'jsonPlaceHolderModule'
     ])
     .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         $httpProvider.interceptors.push('AuthInterceptor');
@@ -19,6 +19,10 @@ var angularJs = angular.module("angularJs",
             .state('examples.static-json', {
                 url: '/static-json',
                 templateUrl: '/templates/examples-staticJson.html'
+            })
+            .state('examples.get-api', {
+                url: '/get-api',
+                templateUrl: '/templates/examples.getAPI.html'
             });
         $urlRouterProvider.otherwise('/');
     })

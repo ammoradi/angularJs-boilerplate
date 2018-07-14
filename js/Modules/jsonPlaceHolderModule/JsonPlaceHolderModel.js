@@ -11,8 +11,20 @@ var jsonPlaceHolderModel = function ($http, Constants) {
             )
     };
 
+    var sendComment = function (json,callback) {
+        $http.post("https://jsonplaceholder.typicode.com/comments",json)
+            .success(function (data, status) {
+                callback(data, true)
+            })
+            .error(function (data, status) {
+                    callback(data, status)
+                }
+            )
+    };
+
     return {
-        getPosts : getPosts
+        getPosts : getPosts,
+        sendComment:sendComment
     }
 };
 

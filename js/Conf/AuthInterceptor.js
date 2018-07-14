@@ -3,6 +3,7 @@ var AuthInterceptor = function ($q) {
         'request': function (config) {
             config.headers = config.headers || {};
             config.headers['Content-Type'] = 'application/json';
+            console.log(config);
             return config;
         },
         'responseError': function (response) {
